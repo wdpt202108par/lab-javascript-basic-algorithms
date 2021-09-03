@@ -24,7 +24,7 @@ let loremipsum = 'Lorem Ipsum is simply dummy text of the printing and typesetti
 console.log (`${loremipsum.length}`)
 
 let stringsearch = "et"
-for(let i=count=0; i<loremipsum.length; count+=+(stringsearch===loremipsum[i++])); \\ CODE TO CHECK LATER
+for(let i=count=0; i<loremipsum.length; count+=+(stringsearch===loremipsum[i++])); 
 
 // Bonus time 2
 
