@@ -72,3 +72,50 @@ for (let i = 0; i < loremIpsum.length - 4; i++) {
 }
 
 console.log(`Number of "et" words: ${etCount}`)
+
+/* BONUS 2 : Vérifier si la phrase est un palindrome */
+
+//Input Phrase sans majuscule ('A' !== 'a') en sautant la ponctuation (avec continue)
+
+let phraseToCheck = `No 'x' in Nixon`; //baksticks pour éviter les confusions avec les autres type de cote et apostrophe
+let phraseTemp = '';
+
+for (char of phraseToCheck.toLowerCase()) {
+	if (char === ` `|| char === `,` || char === `!`|| char === `?`|| char === `.`||char === `"`|| char === `:`|| char === `;` || char === `'`) {
+		continue;
+	}
+	else {
+		phraseTemp += char;
+	}	
+}
+console.log(phraseTemp);
+
+//Arrondir la moyenne du nombre de caractères de la chaîne au chiffre entier uniquement
+let halfRounded = Math.trunc(phraseTemp.length / 2);
+
+//Input première moitié de la phrase à vérifier
+let firstHalf = '';
+
+for (let i = 0; i < halfRounded ; i++) {
+	firstHalf += phraseTemp[i];
+}	
+console.log(firstHalf);
+
+//Input 2eme moitié de la phrase 
+let secondHalf = '';
+
+for (let i = phraseTemp.length -1 ; i >= 0 ; i--) {
+	if (secondHalf.length >= halfRounded) {
+		break;
+	} else {
+		secondHalf += phraseTemp[i];
+	} 
+}
+console.log(secondHalf);
+
+//Comparer les 2 moitiés 
+if (firstHalf === secondHalf) {
+	console.log(`"${phraseToCheck}" is a Palindrome !`)
+} else {
+	console.log(`"${phraseToCheck}" is not a Palindrome.`)
+}
