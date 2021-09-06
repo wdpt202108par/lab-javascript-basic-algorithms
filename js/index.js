@@ -18,4 +18,18 @@ let result = "";
 for (i=0 ; i <= hacker1.length-1 ; i++) {
   result = result + hacker1[i] + " ";
 }
-console.log(result);
+console.log(result.toUpperCase());
+
+let result2 ="";
+for (i= hacker2.length-1 ; i >= 0; i--) {
+    result2 = result2 + hacker2[i];
+  }
+  console.log(result2);
+
+  if (hacker1.localeCompare(hacker2) === -1){
+    console.log("The driver's name goes first");
+} else if (hacker1.localeCompare(hacker2) === 0) {
+  console.log("What?! You both have the same name?")
+} else {
+  console.log("Yo, the navigator goes first definitely.")
+}
